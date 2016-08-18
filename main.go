@@ -11,7 +11,7 @@ import (
 	"github.com/Spark-Networks/gotrygo/healthz"
 )
 
-var version = "v0.2.0"
+var version = "v0.3.0"
 
 func index(c *gin.Context) {
 	hostname, _ := os.Hostname()

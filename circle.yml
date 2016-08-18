@@ -14,7 +14,7 @@ dependencies:
     - go get -t -d -v ./...
     - make build
     # create a docker image
-    - docker build -t sparknetworks/gotrygo:v0.2.0 .
+    - docker build -t sparknetworks/gotrygo:v0.3.0 .
 
 test:
   override:
@@ -26,4 +26,4 @@ deployment:
     branch: master
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push sparknetworks/gotrygo:v0.2.0
+      - docker push sparknetworks/gotrygo:v0.3.0
