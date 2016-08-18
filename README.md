@@ -1,4 +1,4 @@
-# GoTryGo
+# GoTryGo - ![](https://circleci.com/gh/Spark-Networks/gotrygo.svg?style=shield&circle-token=:circle-token)
 
 A simple Go app for testing builds/deployments in docker.
 
