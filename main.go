@@ -11,7 +11,7 @@ import (
 	"github.com/Spark-Networks/gotrygo/healthz"
 )
 
-var version = "v0.1.0"
+var version = "v0.2.0"
 
 func index(c *gin.Context) {
 	hostname, _ := os.Hostname()
@@ -23,7 +23,7 @@ func index(c *gin.Context) {
 func main() {
 	log.Println("Starting GoTryGo... ")
 	gin.SetMode(gin.ReleaseMode)
-	httpAddr := "8080"
+	httpAddr := "80"
 	router := gin.Default()
 
 	router.GET("/", index)
