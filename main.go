@@ -21,7 +21,7 @@ func index(c *gin.Context) {
 func main() {
 	log.Println("Starting GoTryGo... ")
 	gin.SetMode(gin.ReleaseMode)
-	httpAddr = "8080"
+	httpAddr := "8080"
 	router := gin.Default()
 
 	router.GET("/", index)
