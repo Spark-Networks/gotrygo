@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 	"github.com/gin-gonic/gin"
 	"github.com/Spark-Networks/gotrygo/healthz"
 )
