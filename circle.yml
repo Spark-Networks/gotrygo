@@ -3,18 +3,28 @@ general:
   branches:
     only:
       - master # for now, only build the master branch
+
 machine:
   services:
     - docker
+
 dependencies:
   override:
     # build the GoDemo binary
     - go get -t -d -v ./...
     - make build
-    # create and export as a docker image
-    - docker build -t gotrygo:0.1.0 .
-    - docker save gotrygo:0.1.0 > $CIRCLE_ARTIFACTS/gotrygo-0.1.0.tar
+    # create a docker image
+    - docker build -t gotrygo:v0.1.0 .
+
 test:
   override:
     # insert all test cases
     - echo "Finished"
+
+deployment:
+  hub:
+    branch: master
+    owner: Spark-Networks
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push sparknetworks/gotrygo:v0.1.0
