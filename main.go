@@ -14,7 +14,8 @@ var version = "0.1.0"
 
 func index(c *gin.Context) {
 	hostname, _ := os.Hostname()
-	content := gin.H{"application":"GoTryGo", "version": version, "host": hostname}
+	t := time.Now().UTC()
+	content := gin.H{"application":"GoTryGo", "version": version, "host": hostname, "current_time": t.Format("Monday, 02-Jan-06 15:04:05 MST")}
 	c.JSON(200, content)
 }
 
