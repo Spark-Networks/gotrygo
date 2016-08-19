@@ -16,7 +16,7 @@ dependencies:
     - go get -t -d -v ./...
     - make build
     # create a docker image
-    - docker build -t sparknetworks/gotrygo:v0.3.0 .
+    - docker build -t sparknetworks/gotrygo:v0.4.0 .
 
 test:
   override:
