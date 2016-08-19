@@ -1,8 +1,8 @@
 
-general:
-  branches:
-    only:
-      - master # for now, only build the master branch
+#general:
+#  branches:
+#    only:
+#      - master # for now, only build the master branch
 
 machine:
   services:
