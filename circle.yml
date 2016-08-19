@@ -25,7 +25,7 @@ test:
 
 deployment:
   hub:
-    tag: /v\d+\.d+\.\d+.\d+/
+    tag: /v\d+\.d+\.\d+/
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push sparknetworks/gotrygo:$CIRCLE_TAG
