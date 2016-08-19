@@ -14,7 +14,7 @@ dependencies:
   override:
     # build the GoDemo binary
     - go get -t -d -v ./...
-    - make build
+    - CGO_ENABLED=0 GOOS=linux go build -v -a -ldflags "-X main.appVersion=$CIRCLE_TAG" -installsuffix cgo -o gotrygo .
     # create a docker image
     - docker build -t sparknetworks/gotrygo:$CIRCLE_TAG .
 
