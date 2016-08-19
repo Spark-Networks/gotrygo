@@ -1,8 +1,8 @@
 
-#general:
-#  branches:
-#    only:
-#      - master # for now, only build the master branch
+general:
+  branches:
+    ignore:
+      - master # for now, only build the master branch
 
 machine:
   services:
@@ -16,7 +16,7 @@ dependencies:
     - go get -t -d -v ./...
     - make build
     # create a docker image
-    - docker build -t sparknetworks/gotrygo:v0.4.0 .
+    - docker build -t sparknetworks/gotrygo:$CIRCLE_TAG .
 
 test:
   override:
