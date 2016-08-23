@@ -15,6 +15,7 @@ var appVersion = "default"
 var httpAddr = "80"
 
 func index(c *gin.Context) {
+        time.Sleep(time.Second)
 	hostname, _ := os.Hostname()
 	t := time.Now().UTC()
 	content := gin.H{"application":"GoTryGo", "version": appVersion, "host": hostname, "current_time": t.Format("Monday, 02-Jan-06 15:04:05 MST")}
