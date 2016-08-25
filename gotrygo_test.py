@@ -71,7 +71,10 @@ def main():
 	except KeyboardInterrupt:
 		stdscr.addstr(0, 0, "Completed {0} requests{1} - STOPPED (press any key to exit)".format(completed_requests,out_of_string))
 		stdscr.refresh()
-		stdscr.getch()
+		try:
+			stdscr.getch()
+		except KeyboardInterrupt:
+			pass
 	# clean up curses environment
 	curses.nocbreak()
 	stdscr.keypad(0)
